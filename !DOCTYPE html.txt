@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fef3e9;
+            color: #5e3c5c;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #d85d5d;
+        }
+        .message {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #d85d5d;
+            color: white;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        button:hover {
+            background-color: #9c4646;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will You Be My Valentine?</h1>
+    <p>Click below to subscribe and accept my Valentine request!</p>
+
+    <form id="subscriptionForm">
+        <input type="text" id="name" placeholder="Your name (optional)" style="padding: 10px; margin: 10px; font-size: 1em;">
+        <br><br>
+        <button type="button" onclick="subscribe()">Yes, I'll be your Valentine!</button>
+    </form>
+
+    <div id="responseMessage" class="message"></div>
+
+    <script>
+        function subscribe() {
+            var name = document.getElementById("name").value;
+            var message = name ? "Thank you, " + name + "! You are officially my Valentine." : "Thank you! You are officially my Valentine!";
+            document.getElementById("responseMessage").innerHTML = message;
+            document.getElementById("subscriptionForm").reset(); // Reset the form after submission
+        }
+    </script>
+
+</body>
+</html>
